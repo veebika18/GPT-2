@@ -98,9 +98,8 @@ class GPT2(Model):
         x = self.norm(x)
         return self.out(x)
 
-# Hyperparameters
-VOCAB_SIZE = 50257  # GPT-2 vocabulary size
-MAX_LENGTH = 1024  # Maximum context length
+VOCAB_SIZE = 50257  
+MAX_LENGTH = 1024  
 
 inputs = tf.keras.Input(shape=(MAX_LENGTH,), dtype=tf.int32)
 outputs = GPT2(vocab_size=VOCAB_SIZE, max_length=MAX_LENGTH)(inputs)
